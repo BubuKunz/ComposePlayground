@@ -7,6 +7,7 @@ import androidx.compose.Composable
 import androidx.compose.Model
 import androidx.core.graphics.drawable.toBitmap
 import androidx.ui.core.*
+import androidx.ui.foundation.Box
 import androidx.ui.foundation.Image
 import androidx.ui.foundation.Text
 import androidx.ui.foundation.VerticalScroller
@@ -14,18 +15,14 @@ import androidx.ui.graphics.ColorFilter
 import androidx.ui.graphics.DefaultAlpha
 import androidx.ui.graphics.ImageAsset
 import androidx.ui.graphics.asImageAsset
-import androidx.ui.layout.Column
-import androidx.ui.layout.Row
-import androidx.ui.material.Button
+import androidx.ui.layout.*
 import androidx.ui.material.MaterialTheme
+import androidx.ui.material.ripple.ripple
 import androidx.ui.tooling.preview.Preview
+import androidx.ui.unit.dp
 import coil.Coil
 import coil.request.GetRequest
 import coil.request.LoadRequest
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,18 +35,8 @@ class MainActivity : AppCompatActivity() {
 
                 VerticalScroller {
                     Column {
-                        Row {
-                            drawSomeState(someState = someState)
-                        }
-                        Row {
-                            Column {
-                                Button(text = { Text(text = "Increase") }, onClick = {
-                                    someState.count++
-                                })
-                            }
-                        }
-                        Row {
-                            ImageByUrl(url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Check_green_icon.svg/1200px-Check_green_icon.svg.png")
+                        (0..9).forEach {
+                            TransactionRow(count = it)
                         }
                     }
                 }
@@ -63,6 +50,39 @@ class MainActivity : AppCompatActivity() {
 fun drawSomeState(someState: SomeState) {
 
     Text(text = "Counter = ${someState.count}")
+}
+
+@Composable
+fun TransactionRow(count: Int) {
+    Row(modifier = Modifier
+        .preferredHeight(56.dp)
+        .ripple()
+        .fillMaxWidth()
+    ) {
+        ImageByUrl(
+            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Check_green_icon.svg/1200px-Check_green_icon.svg.png",
+            modifier = Modifier
+                .gravity(Alignment.CenterVertically)
+                .padding(start = 16.dp, end = 16.dp)
+                .preferredSize(24.dp, 24.dp)
+        )
+        Column(
+            modifier = Modifier
+                .weight(1.0f, true)
+                .gravity(Alignment.CenterVertically)
+                .padding(end = 8.dp)
+        ) {
+            Text(text = "Line 1 count $count")
+            Box(modifier = Modifier
+                .preferredHeight(8.dp))
+            Text(text = "Line 2")
+        }
+        Text(
+            text = "Amount",
+            modifier = Modifier.wrapContentWidth(Alignment.CenterEnd)
+                .padding(end = 16.dp)
+        )
+    }
 }
 
 @Model
