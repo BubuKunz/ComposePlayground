@@ -1,0 +1,205 @@
+{
+  "totalCount":41,
+  "items": [
+    {
+      "id": "27079",
+      "obpTransactionId": "27079",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-20T10:06:14Z",
+      "currency": "BHD",
+      "amount": "-16.674",
+      "description": "McDonald's",
+      "metadata": {}
+    },
+    {
+      "id": "27078",
+      "obpTransactionId": "27078",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-20T10:05:14Z",
+      "currency": "BHD",
+      "amount": "34.767",
+      "description": "Jah Simon",
+      "metadata": {}
+    },
+    {
+      "id": "27077",
+      "obpTransactionId": "27077",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-20T10:04:14Z",
+      "currency": "BHD",
+      "amount": "-14.263",
+      "description": "Al Aali Mall",
+      "metadata": {}
+    },
+    {
+      "id": "27076",
+      "obpTransactionId": "27076",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-20T09:26:14Z",
+      "currency": "BHD",
+      "amount": "-44.263",
+      "description": "The Butcher shop && The candies shop && The sweet-shot",
+      "metadata": {}
+    },
+    {
+      "id": "27026",
+      "obpTransactionId": "27036",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-20T09:16:14Z",
+      "currency": "BHD",
+      "amount": "-44.263",
+      "description": "The Butcher shop && The candies shop && The sweet-shot",
+      "metadata": {}
+    },
+    {
+      "id": "27025",
+      "obpTransactionId": "27035",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-19T23:13:14Z",
+      "currency": "BHD",
+      "amount": "44.23",
+      "description": "Cofee && cats",
+      "metadata": {}
+    },
+    {
+      "id": "27024",
+      "obpTransactionId": "27034",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-19T22:53:14Z",
+      "currency": "BHD",
+      "amount": "40.2",
+      "description": "Naseef Restaurant",
+      "metadata": {}
+    },
+    {
+      "id": "26324",
+      "obpTransactionId": "25434",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-19T22:03:14Z",
+      "currency": "BHD",
+      "amount": "0.499",
+      "description": "Reebok store",
+      "metadata": {}
+    },
+    {
+      "id": "26322",
+      "obpTransactionId": "25432",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-19T03:00:00Z",
+      "currency": "BHD",
+      "amount": "0.499",
+      "description": "Sport && court",
+      "metadata": {}
+    },
+    {
+      "id": "26321",
+      "obpTransactionId": "25431",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-19T02:00:00Z",
+      "currency": "BHD",
+      "amount": "0.501",
+      "description": "John Snow",
+      "metadata": {}
+    },
+    {
+      "id": "26320",
+      "obpTransactionId": "25430",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-16T12:00:00Z",
+      "currency": "BHD",
+      "amount": "0.500",
+      "description": "Merry Poppins",
+      "metadata": {}
+    },
+    {
+      "id": "26319",
+      "obpTransactionId": "25409",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-15T12:00:00Z",
+      "currency": "BHD",
+      "amount": "1",
+      "description": "Queen Cinema",
+      "metadata": {}
+    },
+    {
+      "id": "26318",
+      "obpTransactionId": "25408",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-14T12:00:00Z",
+      "currency": "BHD",
+      "amount": "0.001",
+      "description": "Woke && Rice",
+      "metadata": {}
+    },
+    {
+      "id": "26317",
+      "obpTransactionId": "25407",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-13T23:59:59Z",
+      "currency": "BHD",
+      "amount": "100",
+      "description": "Rental fee",
+      "metadata": {}
+    },
+    {
+      "id": "26316",
+      "obpTransactionId": "25406",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-13T20:59:59Z",
+      "currency": "BHD",
+      "amount": "100000000",
+      "description": "Jackpot",
+      "metadata": {}
+    },
+    {
+      "id": "26315",
+      "obpTransactionId": "25405",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-13T20:29:59Z",
+      "currency": "BHD",
+      "amount": "99999999",
+      "description": "Jackpot from the Royal Ukraine Mejigirya Palace",
+      "metadata": {}
+    },
+    {
+      "id": "26314",
+      "obpTransactionId": "25405",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-13T20:28:59Z",
+      "currency": "BHD",
+      "amount": "3",
+      "description": "Hot && Dog",
+      "metadata": {}
+    },
+    {
+      "id": "26313",
+      "obpTransactionId": "25404",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-13T20:27:59Z",
+      "currency": "BHD",
+      "amount": "5",
+      "description": "Burger King",
+      "metadata": {}
+    },
+    {
+      "id": "26312",
+      "obpTransactionId": "25403",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-13T20:26:59Z",
+      "currency": "BHD",
+      "amount": "9.999",
+      "description": "Liqueur shop",
+      "metadata": {}
+    },
+    {
+      "id": "26311",
+      "obpTransactionId": "25402",
+      "accountId": "5e0f41c3e5a25300010dc2b0",
+      "date": "2019-12-13T20:25:59Z",
+      "currency": "BHD",
+      "amount": "11.111",
+      "description": "Diner on the corner",
+      "metadata": {}
+    }
+  ]
+}

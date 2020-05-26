@@ -2,15 +2,17 @@ package com.dashdevs.dashdevscomposesample
 
 import android.content.Context
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.Composable
 import androidx.compose.Model
 import androidx.core.graphics.drawable.toBitmap
+import androidx.lifecycle.observe
 import androidx.ui.core.*
+import androidx.ui.foundation.AdapterList
 import androidx.ui.foundation.Box
 import androidx.ui.foundation.Image
 import androidx.ui.foundation.Text
-import androidx.ui.foundation.VerticalScroller
 import androidx.ui.graphics.ColorFilter
 import androidx.ui.graphics.DefaultAlpha
 import androidx.ui.graphics.ImageAsset
@@ -23,26 +25,33 @@ import androidx.ui.unit.dp
 import coil.Coil
 import coil.request.GetRequest
 import coil.request.LoadRequest
+import com.dashdevs.dashdevscomposesample.data.Transaction
 
 class MainActivity : AppCompatActivity() {
+    val viewModel: TransactionsViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Coil.imageLoader(this).clearMemory()
+        val transactionsList = TransactionsList(emptyList())
+        viewModel.transactions.observe(this) {
+            transactionsList.transactions = it
+        }
+        viewModel.fetchTransactions()
         setContent {
             MaterialTheme {
-
-                val someState = SomeState()
-
-                VerticalScroller {
-                    Column {
-                        (0..9).forEach {
-                            TransactionRow(count = it)
-                        }
-                    }
-                }
-
+                drawTransactions(transactionsList = transactionsList)
             }
         }
+    }
+}
+
+@Model
+data class TransactionsList(var transactions: List<Transaction>)
+
+@Composable
+fun drawTransactions(transactionsList: TransactionsList) {
+    AdapterList(data = transactionsList.transactions) {
+        TransactionRow(transaction = it)
     }
 }
 
@@ -53,14 +62,15 @@ fun drawSomeState(someState: SomeState) {
 }
 
 @Composable
-fun TransactionRow(count: Int) {
-    Row(modifier = Modifier
-        .preferredHeight(56.dp)
-        .ripple()
-        .fillMaxWidth()
+fun TransactionRow(transaction: Transaction) {
+    Row(
+        modifier = Modifier
+            .preferredHeight(56.dp)
+            .ripple()
+            .fillMaxWidth()
     ) {
         ImageByUrl(
-            url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Check_green_icon.svg/1200px-Check_green_icon.svg.png",
+            url = transaction.iconUrl,
             modifier = Modifier
                 .gravity(Alignment.CenterVertically)
                 .padding(start = 16.dp, end = 16.dp)
@@ -72,9 +82,11 @@ fun TransactionRow(count: Int) {
                 .gravity(Alignment.CenterVertically)
                 .padding(end = 8.dp)
         ) {
-            Text(text = "Line 1 count $count")
-            Box(modifier = Modifier
-                .preferredHeight(8.dp))
+            Text(text = transaction.amount)
+            Box(
+                modifier = Modifier
+                    .preferredHeight(8.dp)
+            )
             Text(text = "Line 2")
         }
         Text(
@@ -100,8 +112,10 @@ private suspend fun loadToImageAsset(context: Context, url: String): UiState {
     val request = GetRequest.Builder(context)
         .data(url)
         .build()
-    return UiState.Success(Coil.imageLoader(context)
-        .execute(request).drawable?.toBitmap()?.asImageAsset())
+    return UiState.Success(
+        Coil.imageLoader(context)
+            .execute(request).drawable?.toBitmap()?.asImageAsset()
+    )
 }
 
 @Composable
@@ -119,7 +133,7 @@ fun DefaultPreview() {
 
 @Composable
 fun ImageByUrl(
-    url: String,
+    url: String?,
     modifier: Modifier = Modifier,
     alignment: Alignment = Alignment.Center,
     contentScale: ContentScale = ContentScale.Inside,
@@ -168,7 +182,8 @@ fun drawImageState(
     when (val state = uiState.state) {
         UiState.Loading -> onLoading()
         is UiState.Success -> state.data?.let {
-            Image(asset = it,
+            Image(
+                asset = it,
                 modifier = modifier,
                 alignment = alignment,
                 contentScale = contentScale,
